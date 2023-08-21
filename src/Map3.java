@@ -106,6 +106,8 @@ public class Map3 extends JFrame{
 				finishTime = System.currentTimeMillis(); 
 				playTime = (finishTime - startTime)/1000;
 				score = 100 - playTime*count/10;
+				if (score<0)
+					score = 0;
 				finish=true;
 				
 				g.drawImage(goal, 0, 50, 800, 600, this);

@@ -23,11 +23,26 @@ class BackgroundMap extends JPanel {
 			g.drawString("GOAL!", 700, 340);
 			
 			//이동 횟수
-			g.setFont(new Font("굴림", Font.ITALIC, 50));
+			g.setFont(new Font("굴림", Font.BOLD, 45));
 			g.setColor(Color.GRAY);
-			g.drawString("<이동횟수>", 711, 177);
+			g.drawString("이동횟수", 731, 177);
 			g.setColor(Color.WHITE);
-			g.drawString("<이동횟수>", 710, 175);
+			g.drawString("이동횟수", 730, 175);
+			
+			//게임설명
+			g.setFont(new Font("굴림", Font.BOLD, 40));
+			g.setColor(Color.GRAY);
+			g.drawString("<게임방법>", 731, 447);
+			g.setColor(Color.WHITE);
+			g.drawString("<게임방법>", 730, 445);
+			g.setFont(new Font("굴림", Font.BOLD, 20));
+			g.setColor(Color.GRAY);
+			g.drawString("각 자동차에 부여된 번호를", 710, 475);
+			g.drawString("누른 후 자동차의 방향에", 710, 495);
+			g.drawString("맞게 방향키로 조작한다.", 710, 515);
+			g.drawString("빨간 자동차가 GOAL블록에", 710, 545);
+			g.drawString("도달 시 클리어", 710, 565);
+			
 		}
 		public void draw(Graphics g) {
 			paintComponent(g);

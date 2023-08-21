@@ -1,7 +1,7 @@
 import java.awt.*;
 import javax.swing.*;
 
-class Car_hor extends JPanel implements Moveable{
+class Car_hor extends JPanel{
     private Color color;
     public int x;
     public int y;
@@ -26,6 +26,7 @@ class Car_hor extends JPanel implements Moveable{
     }
     
     public void draw(Graphics g) {
+    	//자동차 부품 좌표
     	int []main_x = {x, x, x+size, x+size, x+size*4/5, x+size*3/5, x+size*3/10, x+size/5};
     	int []main_y = {y, y+40, y+40, y, y, y-40, y-40, y};
     	int []bonnet_x = {x, x+size, x+size+20, x+20};
@@ -84,9 +85,8 @@ class Car_hor extends JPanel implements Moveable{
     
     public void stop() {
     	move = false;
-    }    
+    }
     
-    @Override
     public void left() {
     	if (move) {
     		if(x > 100 && x < 600 ) {
@@ -101,7 +101,6 @@ class Car_hor extends JPanel implements Moveable{
     	}
     }
 
-	@Override
     public void	right() {
     	if (move) {
     		//1번 차는 골인지점의 x좌표가 100만큼 더 크기 때문에 따로 설정
@@ -124,12 +123,4 @@ class Car_hor extends JPanel implements Moveable{
     	setLocation(x, y);
     	}
     }
-    
-	@Override
-	public void up() {
-	}
-
-	@Override
-	public void down() {
-	}
 }

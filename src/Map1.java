@@ -20,11 +20,8 @@ public class Map1 extends JFrame{
 	private boolean finish=false;
 	private Timer timer;
 
-	public Map1() {
-		//배경 음악
-		new BGM();
-		
-		//키보드 작동
+	public Map1() {		
+		//키보드 리스너
 		initListener();
 		
 		//이미지 가져옴
@@ -119,6 +116,9 @@ public class Map1 extends JFrame{
 				playTime = (finishTime - startTime)/1000;
 				//소요시간과 이동횟수로 점수를 계산
 				score = 100 - playTime*count/10;
+				//소요시간이 음수일 경우 0점으로 계산
+				if (score<0)
+					score = 0;
 				//완주시 finish를 참으로 변경
 				finish=true;
 				//타이머 실행
@@ -232,7 +232,8 @@ public class Map1 extends JFrame{
 						break;
 						
 					case KeyEvent.VK_LEFT:
-							if(Car1.Moving()) {
+							if(Car1.Moving
+								()) {
 								Car1.left();
 								if(checkCollision()) {
 									Car1.right();
@@ -262,6 +263,7 @@ public class Map1 extends JFrame{
 						
 							if(Car1.Moving()) {
 								Car1.right();
+								
 								if(checkCollision()) {
 									Car1.left();
 								}
